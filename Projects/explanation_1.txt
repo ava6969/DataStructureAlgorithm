@@ -1,0 +1,3 @@
+The time complecity for all operations is O(1)
+The data structure used for the class is a dictionary because we can access values in O(1) time
+A heap is used to pop the object with the smallest frequency
