@@ -15,12 +15,15 @@ def build_tree(data):
     tmp3 = None
     huffman = Counter(data)
     h = heapify(huffman)
-
+    time = 0
+    init_h = len(h)
     while len(h) > 1:
+        time += 1
         tmp1 = heapq.heappop(h)
         tmp2 = heapq.heappop(h)
         tmp3 = HuffTree(HuffInternalNode(tmp1 + tmp2, tmp1._root(), tmp2._root()))
         heapq.heappush(h, tmp3)
+
     return tmp3
 
 
@@ -93,5 +96,6 @@ def test2():
     print ("The size of the decoded data is: {}\n".format(sys.getsizeof(decoded_data)))
     print ("The content of the encoded data is: {}\n".format(decoded_data))
 
-test2()
+
 test1()
+test2()

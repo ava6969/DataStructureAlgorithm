@@ -51,4 +51,30 @@ def test():
 
     print(is_user_in_group("sub_child_user", child))
 
-test()
+
+def test1():
+    parent = Group("parent")
+    print(len(parent.groups) == 0)
+
+
+def test2():
+    parent = Group("parent")
+    child = Group("child")
+    sub_child = Group("subchild")
+
+    sub_child_user = "sub_child_user"
+    sub_child.add_user(sub_child_user)
+
+    sub_child_user1 = "sub_child_user1"
+    sub_child.add_user(sub_child_user1)
+
+    sub_child_user2 = "sub_child_user2"
+    sub_child.add_user(sub_child_user2)
+
+    child.add_group(sub_child)
+    parent.add_group(child)
+
+    print(is_user_in_group("sub_child_user1", parent))
+
+test2()
+test1()

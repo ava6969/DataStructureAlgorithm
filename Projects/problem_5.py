@@ -17,6 +17,13 @@ class Block:
         sha.update(hash_str)
         return sha.hexdigest()
 
+    def __repr__(self):
+        return f"timestamp: {self.timestamp}\n" \
+               f"data:      {self.data}\n" \
+               f"prev_hash: {self.previous_hash}\n" \
+               f"hash:      {self.hash}\n"
+
+
 
 class Blockchain:
     def __init__(self):
@@ -33,8 +40,9 @@ class Blockchain:
 
         new_node = Block(datetime.now().strftime("%d-%b-%Y (%H:%M:%S.%f)"),
                          data, self.tail.hash)
-        new_node.previous = self.tail
-        self.tail = new_node
+        self.tail.next = new_node
+        self.tail.next.previous = self.tail
+        self.tail = self.tail.next
 
     def to_list(self):
 
@@ -42,7 +50,7 @@ class Blockchain:
         lst = []
         ptr = self.head
         while ptr:
-            lst.append(ptr.data)
+            lst.append(ptr)
             ptr = ptr.next
 
         return lst
@@ -51,9 +59,15 @@ class Blockchain:
 def test():
     bc = Blockchain()
     bc.append("INFO 1")
+    print(bc.head.data == "INFO 1" ) # True
+    print(len(bc.to_list()) == 1)  # True
     bc.append("INFO 2")
-    bc.append("INFO 3")
 
-    print(bc.to_list())
+    bc.append("INFO 3")
+    list_v = bc.to_list()
+    print(list_v)
+
+    print(list_v[1].previous_hash == list_v[0].hash) # True
+    print(len(list_v) == 3)  # True
 
 test()

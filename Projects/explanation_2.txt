@@ -1,0 +1,3 @@
+we recursively look through the directories to find a file
+We search through the entire tree, so in the worst case we recurse through the entire directories.
+This is O(n)

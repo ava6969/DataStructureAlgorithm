@@ -110,6 +110,6 @@ def test():
     print(union(linked_list_3, linked_list_4))
 
     print(intersection(linked_list_1, linked_list_2))
-    print(intersection(linked_list_3, linked_list_4))
+    print(intersection(linked_list_3, linked_list_4).head is None)
 
 test()

@@ -1,0 +1,5 @@
+
+union and intersection operation - we create a set from the linkedlist to capture unique values from list1,
+another loop is run through the entire list2, to append unique values
+
+total runtime = O(n) + O(n) = O(2n)

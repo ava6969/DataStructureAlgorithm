@@ -44,6 +44,7 @@ def test():
     res = find_files(".c", "testdir")
     print(len(res) == 4)  # True
     print(all([d.endswith(".c") for d in res]))  # True
+    print(all([d.endswith("lc") for d in res]))  # False
 
 
 test()
