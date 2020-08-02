@@ -1,0 +1,6 @@
+The Router uses the trie data structure to parse its links. this works because the individual part of the http link are
+connected to each other . So its space efficient.
+
+For time Effieciency,
+add_handler - happens in O(log(n)) worst case because we have to traverse to just one leaf and append at the end
+lookup - this operation is also a O(log(n)) because we only have to loop through one branch.

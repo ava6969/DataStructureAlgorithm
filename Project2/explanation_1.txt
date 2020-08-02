@@ -1,0 +1,1 @@
+i found the runtime for this function is approx log(n) , due to the fact we divide the sum of x and y by 2.

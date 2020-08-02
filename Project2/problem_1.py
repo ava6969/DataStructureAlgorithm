@@ -12,8 +12,9 @@ def sqrt(n, eps=0.000001):
     # can definitely be improved
     x = n
     y = 1
-
+    t = 0
     while (x - y > eps):
+        t += 1
         x = (x + y) // 2
         y = n / x
 
@@ -25,3 +26,4 @@ print("Pass" if (0 == sqrt(0)) else "Fail")
 print("Pass" if (4 == sqrt(16)) else "Fail")
 print("Pass" if (1 == sqrt(1)) else "Fail")
 print("Pass" if (5 == sqrt(27)) else "Fail")
+print("Pass" if (25 == sqrt(625)) else "Fail")

@@ -8,9 +8,8 @@ def binarySearch(arr, low, high, key):
     if key == arr[mid]:
         return mid
     if key > arr[mid]:
-        return binarySearch(arr, (mid + 1), high,
-                            key);
-    return binarySearch(arr, low, (mid - 1), key);
+        return binarySearch(arr, (mid + 1), high, key)
+    return binarySearch(arr, low, (mid - 1), key)
 
 
 def findPivot(arr, low, high):
@@ -42,11 +41,11 @@ def rotated_array_search(input_list, number):
        int: Index or -1
     """
     n = len(input_list)
-    pivot = findPivot(input_list, 0, n - 1);
+    pivot = findPivot(input_list, 0, n - 1)
 
     # If we didn't find a pivot, then array is not rotated at all
     if pivot == -1:
-        return binarySearch(input_list, 0, n - 1, number);
+        return binarySearch(input_list, 0, n - 1, number)
 
         # If we found a pivot, then first
     # compare with pivot and then
@@ -54,8 +53,8 @@ def rotated_array_search(input_list, number):
     if input_list[pivot] == number:
         return pivot
     if input_list[0] <= number:
-        return binarySearch(input_list, 0, pivot - 1, number);
-    return binarySearch(input_list, pivot + 1, n - 1, number);
+        return binarySearch(input_list, 0, pivot - 1, number)
+    return binarySearch(input_list, pivot + 1, n - 1, number)
 
 
 def linear_search(input_list, number):

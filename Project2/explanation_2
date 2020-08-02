@@ -1,0 +1,4 @@
+The algorithm is broken down into 2 parts - we try to find what range of the list to search for, therefore reducing
+the search space
+in worst case the pivot search happens in log(n) time and best case O(1)
+a binary search is performed on the range chosen

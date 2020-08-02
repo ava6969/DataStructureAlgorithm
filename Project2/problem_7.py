@@ -12,8 +12,7 @@ class RouteTrie:
         for part in path_list:
             if part not in current_node.children:
                 current_node.insert(part)
-            else:
-                current_node = current_node.children[part]
+            current_node = current_node.children[part]
         current_node.handler = handler
 
     #         return current_node
@@ -23,10 +22,9 @@ class RouteTrie:
         # Return the handler for a match, or None for no match
         current_node = self.root
         for part in path_list:
-            if part not in current_node.handler:
-                return current_node.handler
-            else:
-                current_node = current_node.children[part]
+            if part not in current_node.children:
+                return current_node.handler if part in current_node.children else None
+            current_node = current_node.children[part]
         return current_node.handler
 
 
@@ -65,10 +63,8 @@ class Router:
         # bonus points if a path works with and without a trailing slash
         # e.g. /about and /about/ both return the /about handler
         path_list = self.split_path(path)
-        if not self.routetrie.find(path_list):
-            return self.not_found
-        else:
-            return self.routetrie.find(path_list)
+        res = self.routetrie.find(path_list)
+        return res if res else self.not_found
 
     def split_path(self, path):
         # you need to split the path into parts for

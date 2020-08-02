@@ -1,0 +1,6 @@
+we perform a loop and swap operation in this algorithm
+
+This is an 0(n) operation because our loop stops once we run from 0 - n
+we perform swaps from the front of the list once we hit a value of 0
+for a value oof 2 we perform swaps from behind
+we skip values of 1

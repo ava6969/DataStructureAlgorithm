@@ -1,0 +1,8 @@
+we add concat digits in the even positions and odd positions
+these concatenated digits comprise of the 2 max sums
+
+the function comprises of
+sorting - O(nlogn)
+a loop through the odd and even indexes = O(n) altogether
+
+The total run time = n + nlogn
