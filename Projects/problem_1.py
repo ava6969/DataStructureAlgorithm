@@ -27,7 +27,7 @@ class LRU_Cache:
             return -1
 
 
-def test1():
+def test():
     our_cache = LRU_Cache(5)
 
     our_cache.set(1, 1)
@@ -43,3 +43,5 @@ def test1():
     our_cache.set(6, 6)  # pop lowest frequency entry
 
     print(our_cache.get(3))  # returns -1 because the cache reached it's capacity and 3 was the least recently used entry
+
+test()
