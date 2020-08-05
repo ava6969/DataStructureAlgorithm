@@ -1,1 +1,0 @@
-this is an O(n) operation since we have to loop through the entire list to compare digits to max and min values.

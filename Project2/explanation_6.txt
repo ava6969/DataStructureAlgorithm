@@ -1,0 +1,3 @@
+The insert operation of a trieNode is a O(1) operation because of the dictionary
+The suffixes operation is a O(n) + T(n). in worst case we loop through the entire nodes from the node searched from
+and T(n) means time for the recursion.
