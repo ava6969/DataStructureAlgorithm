@@ -102,6 +102,31 @@ class LRUCache(object):
         else:
             return default
 
+def test1():
+    our_cache = LRUCache(3)
+    our_cache.set(1, 1)
+    our_cache.set(2, 1)
+    print(our_cache.get(1)) # 1
+
+
+def test2():
+    our_cache = LRUCache(10)
+    our_cache.set(1, 1)
+    our_cache.set(2, 2)
+    our_cache.set(3, 3)
+    our_cache.set(4, 4)
+    our_cache.set(11, 1)
+    our_cache.set(12, 2)
+    our_cache.set(13, 3)
+    our_cache.set(14, 4)
+    our_cache.set(11, 1)
+    our_cache.set(22, 2)
+    our_cache.set(23, 3)
+    our_cache.get(24)# Expected Value = -1
+    our_cache.get(1)  # Expected Value = 1
+    our_cache.get(2)  # Expected Value = 2
+    our_cache.get(3)  # Expected Value = 3
+
 
 def test():
     our_cache = LRUCache(3)
@@ -128,4 +153,4 @@ def test():
     our_cache.get(6)  # Expected Value = 6
     print(our_cache.get(5))  # Expected Value = 10 Your Output = -1
 
-test()
+test1()

@@ -80,36 +80,47 @@ def intersection(llist_1, llist_2):
 def test():
     # Test case 1
 
+    # linked_list_1 = LinkedList()
+    # linked_list_2 = LinkedList()
+    #
+    # element_1 = [3, 2, 4, 35, 6, 65, 6, 4, 3, 21]
+    # element_2 = [6, 32, 4, 9, 6, 1, 11, 21, 1]
+    #
+    # for i in element_1:
+    #     linked_list_1.append(i)
+    #
+    # for i in element_2:
+    #     linked_list_2.append(i)
+    #
+    # # Test case 2
+    #
+    # linked_list_3 = LinkedList()
+    # linked_list_4 = LinkedList()
+    #
+    # element_1 = [3, 2, 4, 35, 6, 65, 6, 4, 3, 23]
+    # element_2 = [1, 7, 8, 9, 11, 21, 1]
+    #
+    # for i in element_1:
+    #     linked_list_3.append(i)
+    #
+    # for i in element_2:
+    #     linked_list_4.append(i)
+    #
+    # print(union(linked_list_1, linked_list_2))
+    # print(union(linked_list_3, linked_list_4))
+    #
+    # print(intersection(linked_list_1, linked_list_2))
+    # print(intersection(linked_list_3, linked_list_4).head is None)
+    #
+    # edgecase
     linked_list_1 = LinkedList()
     linked_list_2 = LinkedList()
+    print(union(linked_list_1, linked_list_2).size() == 0)
 
-    element_1 = [3, 2, 4, 35, 6, 65, 6, 4, 3, 21]
-    element_2 = [6, 32, 4, 9, 6, 1, 11, 21, 1]
+    linked_list_1 = LinkedList()
+    linked_list_2 = LinkedList()
+    linked_list_2.append(2)
+    print(intersection(linked_list_1, linked_list_2).size() == 0)
 
-    for i in element_1:
-        linked_list_1.append(i)
-
-    for i in element_2:
-        linked_list_2.append(i)
-
-    # Test case 2
-
-    linked_list_3 = LinkedList()
-    linked_list_4 = LinkedList()
-
-    element_1 = [3, 2, 4, 35, 6, 65, 6, 4, 3, 23]
-    element_2 = [1, 7, 8, 9, 11, 21, 1]
-
-    for i in element_1:
-        linked_list_3.append(i)
-
-    for i in element_2:
-        linked_list_4.append(i)
-
-    print(union(linked_list_1, linked_list_2))
-    print(union(linked_list_3, linked_list_4))
-
-    print(intersection(linked_list_1, linked_list_2))
-    print(intersection(linked_list_3, linked_list_4).head is None)
 
 test()

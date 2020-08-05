@@ -2,3 +2,5 @@ The time complecity for all operations in the LRUCache is O(1)
 The data structure used for the class is a dictionary and a linkedlist .
 This collaboration helps us put and get items in a dictionary in constant time, but using a linkedlist adds the LRU
 feature where the least used data gets called first.
+
+Space Complexity = O(n)

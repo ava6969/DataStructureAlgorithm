@@ -3,3 +3,4 @@ union and intersection operation - we create a set from the linkedlist to captur
 another loop is run through the entire list2, to append unique values
 
 total runtime = O(n) + O(n) = O(2n)
+Space complexity = O(n) linkedlist + O(n) set = O(2n)

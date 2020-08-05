@@ -1,12 +1,14 @@
 To operations can be broken into the following steps
 1) Encoding
     building tree from data :   involves getting freq of data = O(n)
-                                heapify the data - O(n)
+                                heapify the data - O(nlogn)
                                 the loops runs len(unique_elements) - 1 , which is linear = O(#elements)
    encoding is a tree-traversal pre order - O(n)
    creating encoded data from table - 0(n)
-
+Space Complexity = counter Dictionary - O(n) + heapified list O(n) = O(2n)
 
 2) Decoding - O(n)
+Space Complexity = O(1) since we append text
 
-    Altogether = approx O(6n)
+
+Altogether = approx O(nlogn + 5n)

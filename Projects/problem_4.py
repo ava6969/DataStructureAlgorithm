@@ -49,6 +49,7 @@ def test():
     child.add_group(sub_child)
     parent.add_group(child)
 
+    print(not is_user_in_group("", parent))  # returns True
     print(is_user_in_group("sub_child_user", child))
 
 
@@ -76,5 +77,6 @@ def test2():
 
     print(is_user_in_group("sub_child_user1", parent))
 
+test()
 test2()
 test1()

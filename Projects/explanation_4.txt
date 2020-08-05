@@ -3,3 +3,5 @@ This function contains both a for loop and recursion
 
 worst case we loop through entire groups and users
 worst case run time = T(n) + O(#groups + #users)
+
+space complexity = O(2^n) , n = number of groups and number of users for every group

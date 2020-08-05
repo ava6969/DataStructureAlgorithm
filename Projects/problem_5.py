@@ -32,6 +32,9 @@ class Blockchain:
 
     def append(self, data):
         # TODO: Implement this method to append to the tail of the list
+        if data == "" or data is None:
+            return
+
         if not self.head:
             self.head = Block(datetime.now().strftime("%d-%b-%Y (%H:%M:%S.%f)"),
                               data, 0)
@@ -56,6 +59,11 @@ class Blockchain:
         return lst
 
 
+def test2():
+    bc = Blockchain()
+    print(len(bc.to_list()) == 0)  # True
+
+
 def test():
     bc = Blockchain()
     bc.append("INFO 1")
@@ -70,4 +78,11 @@ def test():
     print(list_v[1].previous_hash == list_v[0].hash) # True
     print(len(list_v) == 3)  # True
 
-test()
+    bc.append("")
+    print(len(list_v) == 3)  # True
+    bc.append(None)
+    print(len(list_v) == 3)  # True
+
+
+
+test2()

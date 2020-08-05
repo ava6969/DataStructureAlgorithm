@@ -38,7 +38,8 @@ def encode_tree(tree):
         traverse(node.left, code + '0')
         traverse(node.right, code+ '1')
 
-    traverse(tree.root)
+    if tree:
+        traverse(tree.root)
     return hash_table
 
 def huffman_decoding(data, tree):
@@ -57,15 +58,17 @@ def huffman_decoding(data, tree):
         elif data[0] == '1':
             return traverse(node.right, data[1:], root, decoded_text)
 
-    decoded_text = traverse(tree.root, data, tree.root)
-    return decoded_text
+    return '' if not tree else traverse(tree.root, data, tree.root)
 
 
 def huffman_encoding(data):
     raw_data = data
     tree = build_tree(data)
     table = encode_tree(tree)
-    encoded_data = ''.join([table[c] for c in raw_data])
+    if len(table.keys()) > 0:
+        encoded_data = ''.join([table[c] for c in raw_data])
+    else:
+        encoded_data = ''
     return tree, encoded_data
 
 
@@ -77,6 +80,15 @@ def test1():
     print(f"Encoded Data {enc_data}")
     print(f"Decoded Data {decoded_data}")
 
+
+def test3():
+    data = 'aaaaaaaaa'
+    tree, enc_data = huffman_encoding(data)
+    decoded_data = huffman_decoding(enc_data, tree)
+    print(decoded_data == '')
+    print(f"Original Data {data}")
+    print(f"Encoded Data {enc_data}")
+    print(f"Decoded Data {decoded_data}")
 
 def test2():
     codes = {}
@@ -96,6 +108,4 @@ def test2():
     print ("The size of the decoded data is: {}\n".format(sys.getsizeof(decoded_data)))
     print ("The content of the encoded data is: {}\n".format(decoded_data))
 
-
-test1()
-test2()
+test3()

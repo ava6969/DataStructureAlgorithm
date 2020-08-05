@@ -1,3 +1,6 @@
 
 A Double linkedList is ideal for this problem because we need a connection to previous nodes and next nodes
 The append operation is an O(1) operation when using a double linked list.
+Overall time complexity = O(n)
+
+Space complexity = O(n)  n = number of blockchains
